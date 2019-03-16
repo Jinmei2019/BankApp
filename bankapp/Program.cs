@@ -6,7 +6,9 @@ namespace bankapp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var a1 = new Account();
+            var a2 = new Account();
+            a1.AccountNumber = 12345;
         }
     }
 }
