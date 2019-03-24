@@ -4,6 +4,13 @@ using System.Text;
 
 namespace bankapp
 {
+    enum AccountType
+    {
+        Checking,
+        Saving,
+        CD,
+        Loan
+    }
     class Account
     {
         #region statics
@@ -19,7 +26,7 @@ namespace bankapp
         public int AccountNumber { get;private set; }
         public string EmailAddress { get; set; }
         public decimal Balance { get;private set; }
-        public string AccountType { get; set; }
+        public AccountType AccountType { get; set; }
         public DateTime CreatedDate { get; private set; }
 
         #endregion
