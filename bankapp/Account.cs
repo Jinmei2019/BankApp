@@ -6,19 +6,37 @@ namespace bankapp
 {
     class Account
     {
-        #region
+        #region statics
+        private static int lastAccountNumber = 0;
+        
+        #endregion
+        #region Properties
         /// <summary>
         /// /Accountnumber
         /// adfhakdfa
         /// ahdfalfhdla
         /// </summary>
-        public int AccountNumber { get; set; }
+        public int AccountNumber { get;private set; }
         public string EmailAddress { get; set; }
-        public decimal Balance { get; set; }
+        public decimal Balance { get;private set; }
         public string AccountType { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; private set; }
 
         #endregion
+
+        #region Constructor
+        public Account()
+        {
+            //lastAccountNumber++;
+            //AccountNumber = lastAccountNumber;
+
+            AccountNumber = ++lastAccountNumber;
+            CreatedDate = DateTime.Now;
+
+        }
+        
+        #endregion
+
 
         #region Methods
         /// <summary>
@@ -26,7 +44,7 @@ namespace bankapp
         /// </summary>
         /// <param name="amount">Amount to be deposited</param>
         /// <returns></returns>
-        public decimal Deposit(decimal amount)
+        public void Deposit(decimal amount)
         {
             //Balance = Balance + amount;
             Balance += amount;
